@@ -1,13 +1,21 @@
-
+//Props example - string, number, boolean datatype example
 type GreetProps = {
-    name: string
+    name: string,
+    msgCnt: number,
+    isLoggedIn: boolean,
 }
 
 const Greet = (props: GreetProps) => {
-    const { name } = props;
+    const { name, msgCnt, isLoggedIn } = props;
     return (
         <>
-            <p>Hi, {name}! WelCome to the app</p>
+            <p>
+                {
+                    isLoggedIn ? 
+                    `Hi, ${name}! WelCome to the app, Your message count is: ${msgCnt}` :
+                    `Welcome to the app`
+                }
+            </p>    
         </>
     );
 }
