@@ -1,12 +1,12 @@
 //Props example - string, number, boolean datatype example
 type GreetProps = {
     name: string,
-    msgCnt: number,
+    msgCnt?: number, //not mandotary field use ?
     isLoggedIn: boolean,
 }
 
 const Greet = (props: GreetProps) => {
-    const { name, msgCnt, isLoggedIn } = props;
+    const { name, msgCnt = 0, isLoggedIn } = props;
     return (
         <>
             <p>
